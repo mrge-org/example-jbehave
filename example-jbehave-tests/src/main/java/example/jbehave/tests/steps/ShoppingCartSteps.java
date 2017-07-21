@@ -20,6 +20,7 @@ public class ShoppingCartSteps {
     @Given("empty shopping cart")
     public void emptyShoppingCart() {
         shoppingCartService.createEmptyShoppingCart();
+        System.out.println("---> Executing @Given(\"empty shopping cart\")");
     }
 
     @When("products are added to the shopping cart: $productNames")
