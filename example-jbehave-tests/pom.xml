@@ -16,7 +16,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                <version>2.19.1</version>
+                <!-- Version is down from 2.20 to avoid error: [WARNING] Corrupted stdin stream in forked JVM 1. -->
                 <!-- http://maven.apache.org/surefire/maven-surefire-plugin/dependency-info.html -->
                 <configuration>
                     <testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
@@ -27,6 +28,13 @@
                         <include>example/jbehave/tests/stories/**/*.java</include>
                     </includes>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>RELEASE</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
