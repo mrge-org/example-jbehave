@@ -9,20 +9,38 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
 
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-
-        <jbehave.version>3.9.2</jbehave.version>
+        <jbehave.version>4.1.1</jbehave.version>
         <logback.version>1.1.1</logback.version>
         <slf4j.version>1.7.6</slf4j.version>
-        <spring.version>4.0.5.RELEASE</spring.version>
+        <spring.version>5.0.0.RC2</spring.version>
+
+        <junit.version>4.12</junit.version>
+        <junit.jupiter.version>5.0.0-M6</junit.jupiter.version>
+        <junit.vintage.version>${junit.version}.0-M6</junit.vintage.version>
+        <junit.platform.version>1.0.0-M6</junit.platform.version>
+
     </properties>
 
     <modules>
         <module>example-jbehave-app</module>
         <module>example-jbehave-tests</module>
     </modules>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/milestone/</url>
+        </repository>
+        <repository>
+            <id>central</id>
+            <name>maven</name>
+            <url>http://central.maven.org/maven2/</url>
+        </repository>
+    </repositories>
 
     <dependencyManagement>
         <dependencies>

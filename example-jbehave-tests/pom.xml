@@ -21,6 +21,7 @@
                     <testSourceDirectory>${basedir}/src/main/java/</testSourceDirectory>
                     <testClassesDirectory>${project.build.directory}/classes/</testClassesDirectory>
                     <includes>
+                        <!--     example.jbehave.tests.stories  package         -->
                         <include>example/jbehave/tests/stories/**/*.java</include>
                     </includes>
                 </configuration>
@@ -82,6 +83,39 @@
             <classifier>resources</classifier>
             <type>zip</type>
         </dependency>
+
+        <!-- JUnit5 -->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>${junit.vintage.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <!-- Exception in thread "main" java.lang.NoSuchMethodError: org.junit.platform.commons.util.ReflectionUtils.getDefaultClassLoader()Ljava/lang/ClassLoader;
+	at org.junit.platform.launcher.core.ServiceLoaderTestEngineRegistry.loadTestEngines(ServiceLoaderTestEngineRegistry.java:30)... -->
+        <!--<dependency>-->
+            <!--<groupId>org.junit.platform</groupId>-->
+            <!--<artifactId>junit-platform-launcher</artifactId>-->
+            <!--<version>RELEASE</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Steps
 public class ShoppingCartSteps {
@@ -57,7 +57,7 @@ public class ShoppingCartSteps {
         @Parameter(name = "QTY")
         private Integer quantity;
 
-        public String getProductName() {
+        String getProductName() {
             return productName;
         }
 
@@ -65,7 +65,7 @@ public class ShoppingCartSteps {
             this.productName = productName;
         }
 
-        public Integer getQuantity() {
+        Integer getQuantity() {
             return quantity;
         }
 
